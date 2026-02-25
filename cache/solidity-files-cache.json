@@ -1,0 +1,123 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\leruo\\Desktop\\WTC 2026\\BLOCKCHAIN TECHNOLOGY\\Workshops with Karabo\\Week 5\\NFT_ERC721\\contracts\\NFT_collection.sol": {
+      "lastModificationDate": 1771930284211,
+      "contentHash": "53731fe6dfea419a6e26e2c0bb10456a",
+      "sourceName": "contracts/NFT_collection.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Address",
+        "Context",
+        "ERC165",
+        "ERC721",
+        "ERC721Enumerable",
+        "IERC165",
+        "IERC721",
+        "IERC721Enumerable",
+        "IERC721Metadata",
+        "IERC721Receiver",
+        "MothoreFoundry",
+        "Ownable",
+        "Strings"
+      ]
+    },
+    "C:\\Users\\leruo\\Desktop\\WTC 2026\\BLOCKCHAIN TECHNOLOGY\\Workshops with Karabo\\Week 5\\NFT_ERC721\\contracts\\NFT_contract.sol": {
+      "lastModificationDate": 1771930284211,
+      "contentHash": "2d770ab35c0500957e40283c973d2848",
+      "sourceName": "contracts/NFT_contract.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "Address",
+        "Context",
+        "ERC165",
+        "ERC721",
+        "ERC721Enumerable",
+        "IERC165",
+        "IERC721",
+        "IERC721Enumerable",
+        "IERC721Metadata",
+        "IERC721Receiver",
+        "NFT",
+        "Ownable",
+        "Strings"
+      ]
+    }
+  }
+}
