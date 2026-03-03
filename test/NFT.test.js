@@ -90,6 +90,14 @@ describe("Complete tests for the NFT Contract", function () {
 
             expect(listOfArray.length).to.equal(2);
         });
+
+        it("2.2 - tokenIds list should be 0 if address doesnt have any NFTs", async function (){
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+             // Check what the function returns
+            const listOfArray = await nft.walletOfOwner(user1.address);
+            expect(listOfArray.length).to.equal(0);
+        });
     });
 
 
