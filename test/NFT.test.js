@@ -143,67 +143,103 @@ describe("Complete tests for the NFT Contract", function () {
 
     describe("4 - Testing onlyOwner functionality", function(){
         it("Only owner should be able to reveal a NFT", async function () {
-            
+            const {nft, owner} = await loadFixture(deployNFTContract);
+            const revealed = await nft.revealed();
+            expect(revealed).to.equal(true);
+
+
         });
 
         it("User trying to reveal a NFT should fail", async function () {
-            
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            expect(nft.connect(user1).reveal()).to.be.reverted;
         });   
         
         it("Only owner should be able to set the cost", async function () {
-            
+            const {nft, owner} = await loadFixture(deployNFTContract);
+            await nft.setCost(3);
+            const cost = await nft.cost();
+            expect(cost).to.equal(3);
         });
 
         it("User trying to set the cost should fail", async function () {
-            
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            expect(nft.connect(user1).setCost(100)).to.be.reverted;            
         });  
     
         it("Only owner should be able to set the max mint amount", async function () {
-            
+            const {nft, owner} = await loadFixture(deployNFTContract);
+            await nft.setmaxMintAmount(25);
+            const maxMintAmount = await nft.maxMintAmount();
+            expect(maxMintAmount).to.equal(25);
         });
 
         it("User trying to set the max mint amount should fail", async function () {
-            
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            expect(nft.connect(user1).setmaxMintAmount(100)).to.be.reverted;            
         });  
 
         it("Only owner should be able to set the not revealed URI", async function () {
-            
+            const {nft, owner} = await loadFixture(deployNFTContract);
+            await nft.setNotRevealedURI("25");
+            const notRevealedUri = await nft.notRevealedUri();
+            expect(notRevealedUri).to.equal("25");
         });
 
         it("User trying to set the not revealed URI should fail", async function () {
-            
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            expect(nft.connect(user1).setNotRevealedURI("null2.json")).to.be.reverted;                 
         });  
 
-        it("Only owner should be able to set the BASE URI", async function () {
-            
-        });
-
         it("User trying to set the BASE URI should fail", async function () {
-            
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            expect(nft.connect(user1).setBaseURI("null2.json")).to.be.reverted;
         }); 
 
         it("Only owner should be able to set the base extension", async function () {
-            
+            const {nft, owner} = await loadFixture(deployNFTContract);
+            await nft.setBaseExtension(".lee");
+            const baseExtension = await nft.baseExtension();
+            expect(baseExtension).to.equal(".lee");            
         });
 
         it("User trying to set the base extension should fail", async function () {
-            
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            expect(nft.connect(user1).setBaseExtension(".xml")).to.be.reverted;            
         });  
 
         it("Only owner should be able to set the pause state", async function () {
-            
+            const {nft, owner} = await loadFixture(deployNFTContract);
+
+            await nft.pause(true);
+            const paused = await nft.paused();
+            expect(paused).to.equal(true);                
         });
 
         it("User trying to set the pause state should fail", async function () {
-            
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            expect(nft.connect(user1).pause(true)).to.be.reverted;  
         });  
 
         it("Only owner should be able to withdraw the contract balance", async function () {
-            
+            const {nft, owner, user1} = await loadFixture(deployNFTContract);
+            const amount = ethers.parseEther("2.0");
+            await nft.connect(user1).mint(2, {value: amount});
+
+            await nft.withdraw();
         });
 
         it("User trying to withdraw the contract balance should fail", async function () {
-            
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            expect(nft.connect(user1).withdraw()).to.be.reverted;  
         });  
     });
 
