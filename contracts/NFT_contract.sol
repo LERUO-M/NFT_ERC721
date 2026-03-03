@@ -1307,6 +1307,10 @@ contract NFT is ERC721Enumerable, Ownable {
     cost = _newCost;
   }
 
+  function setRevealed(bool _newRevealed) public onlyOwner {
+    revealed = _newRevealed;
+  }
+
   function setmaxMintAmount(uint256 _newmaxMintAmount) public onlyOwner {
     maxMintAmount = _newmaxMintAmount;
   }

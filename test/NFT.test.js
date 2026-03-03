@@ -101,16 +101,43 @@ describe("Complete tests for the NFT Contract", function () {
     });
 
     describe("3 - Testing the tokenURI function", function(){
-        it("Tring to find an NFT of a tokenId that doesnt exist; it should revert", async function () {
-            
+        it("3.1 - Tring to find an NFT of a tokenId that doesnt exist; it should revert", async function () {
+            const {nft, user1} = await loadFixture(deployNFTContract);
+
+            const tokenuri = nft.tokenURI(5);
+            expect(tokenuri).to.be.reverted;
         });
 
-        it("Tring to find an NFT of a tokenId that exists, that is not revealed. This should revert", async function () {
-            
-        });
+        it("3.2 - Tring to find an NFT of a tokenId that exists, and has been revealed", async function () {
+            const {nft, owner} = await loadFixture(deployNFTContract);
 
-        it("Tring to find an NFT of a tokenId that exists, and has been revealed", async function () {
+            // Minting 2 tokens to User1
+            const amount = ethers.parseEther("2.0");
+            await nft.mint(2, {value: amount});
+            expect(await nft.balanceOf(owner.address)).to.equal(2);
+
+            await nft.setRevealed(false);
+
+            // Check if token exists
+            const tokenuri = await nft.tokenURI(1);
+
             
+            expect(tokenuri).to.equal("null");
+        });          
+
+        it("3.3 - Tring to find an NFT of a tokenId that exists, and has been revealed", async function () {
+            const {nft, owner} = await loadFixture(deployNFTContract);
+
+            // Minting 2 tokens to User1
+            const amount = ethers.parseEther("2.0");
+            await nft.mint(2, {value: amount});
+            expect(await nft.balanceOf(owner.address)).to.equal(2);
+
+            // Check if token exists
+            const tokenuri = await nft.tokenURI(1);
+
+            
+            expect(tokenuri).to.equal("null1.json");
         });        
     });
 
