@@ -100,5 +100,85 @@ describe("Complete tests for the NFT Contract", function () {
         });
     });
 
+    describe("3 - Testing the tokenURI function", function(){
+        it("Tring to find an NFT of a tokenId that doesnt exist; it should revert", async function () {
+            
+        });
+
+        it("Tring to find an NFT of a tokenId that exists, that is not revealed. This should revert", async function () {
+            
+        });
+
+        it("Tring to find an NFT of a tokenId that exists, and has been revealed", async function () {
+            
+        });        
+    });
+
+    describe("4 - Testing onlyOwner functionality", function(){
+        it("Only owner should be able to reveal a NFT", async function () {
+            
+        });
+
+        it("User trying to reveal a NFT should fail", async function () {
+            
+        });   
+        
+        it("Only owner should be able to set the cost", async function () {
+            
+        });
+
+        it("User trying to set the cost should fail", async function () {
+            
+        });  
+    
+        it("Only owner should be able to set the max mint amount", async function () {
+            
+        });
+
+        it("User trying to set the max mint amount should fail", async function () {
+            
+        });  
+
+        it("Only owner should be able to set the not revealed URI", async function () {
+            
+        });
+
+        it("User trying to set the not revealed URI should fail", async function () {
+            
+        });  
+
+        it("Only owner should be able to set the BASE URI", async function () {
+            
+        });
+
+        it("User trying to set the BASE URI should fail", async function () {
+            
+        }); 
+
+        it("Only owner should be able to set the base extension", async function () {
+            
+        });
+
+        it("User trying to set the base extension should fail", async function () {
+            
+        });  
+
+        it("Only owner should be able to set the pause state", async function () {
+            
+        });
+
+        it("User trying to set the pause state should fail", async function () {
+            
+        });  
+
+        it("Only owner should be able to withdraw the contract balance", async function () {
+            
+        });
+
+        it("User trying to withdraw the contract balance should fail", async function () {
+            
+        });  
+    });
+
 
 });
